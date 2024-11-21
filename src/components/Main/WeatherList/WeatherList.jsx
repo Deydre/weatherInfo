@@ -51,15 +51,16 @@ const WeatherList = () => {
   }
 
 
-  return <section>
+  return <>
     <form onSubmit={handleSubmit}>
-      <input type="text" name="title" value={values} onChange={handleChange}/>
+      <input type="text" name="title" value={values} onChange={handleChange} />
       <button type="submit">🔍</button>
     </form>
-
     <h2>{city}</h2>
-    {renderWeather()}
-  </section>;
+    <section className="section-cards">   
+      {renderWeather()}
+    </section>
+  </>
 };
 
 export default WeatherList;
