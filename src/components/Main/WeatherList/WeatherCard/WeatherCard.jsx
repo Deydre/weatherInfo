@@ -9,8 +9,9 @@ const WeatherCard = (data) => {
         <h3>{weather.dt_txt.slice(0, 10)}</h3>
       </div>
       <div>
-        {/* https://openweathermap.org/weather-conditions */}
         <p>{weather.weather[0].icon}</p>
+        <img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+          alt={weather.weather[0].description}/>
         <div id="weather">
           <p>{weather.weather[0].description}</p>
         </div>
@@ -19,17 +20,17 @@ const WeatherCard = (data) => {
         <section>
           <article>
             <h4>Temperatura</h4>
-            <p>{(weather.main.temp - 273, 15)}º</p>
+            <p>{((weather.main.temp) - 273.15).toFixed(1)}º</p>
           </article>
         </section>
         <section>
           <article>
             <h5>Mín</h5>
-            <p>{weather.main.temp_min}º</p>
+            <p>{((weather.main.temp_min) - 273.15).toFixed(1)}º</p>
           </article>
           <article>
             <h5>Máx</h5>
-            <p>{weather.main.temp_max}º</p>
+            <p>{((weather.main.temp_max) - 273.15).toFixed(1)}º</p>
           </article>
         </section>
       </div>

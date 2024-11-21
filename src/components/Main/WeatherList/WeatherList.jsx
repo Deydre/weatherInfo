@@ -27,7 +27,7 @@ const WeatherList = () => {
   }, []);
 
   useEffect(() => {
-    // La primera vez que se hace la llamada a la API y lo pinta
+    // Cuando cambia el estado de city, se hace el axios con la info de esa ciudad
     const getWeather = async () => {
       try {
         const resp = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=es&appid=${import.meta.env.VITE_API_KEY}`);
@@ -49,7 +49,6 @@ const WeatherList = () => {
     setCity(values);
     setValue("");
   }
-
 
   return <>
     <form onSubmit={handleSubmit}>
